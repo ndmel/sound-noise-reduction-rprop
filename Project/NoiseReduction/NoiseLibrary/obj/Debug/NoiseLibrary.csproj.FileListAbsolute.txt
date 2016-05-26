@@ -1,0 +1,14 @@
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NoiseLibrary.dll
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NoiseLibrary.pdb
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\obj\Debug\NoiseLibrary.dll
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\obj\Debug\NoiseLibrary.pdb
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\obj\Debug\NoiseLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NAudio.dll
+C:\Users\Никита\Desktop\Курсовая\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NAudio.xml
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NoiseLibrary.dll
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NoiseLibrary.pdb
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NAudio.dll
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\bin\Debug\NAudio.xml
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\obj\Debug\NoiseLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\obj\Debug\NoiseLibrary.dll
+C:\Users\Никита\Desktop\КР Мелентьев Никита Дмитриевич, группа бПИ141 2016\Проект\NoiseReduction\NoiseLibrary\obj\Debug\NoiseLibrary.pdb
