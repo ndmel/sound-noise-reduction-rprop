@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using NoiseLibrary;
 using System;
 using System.Xml.Serialization;
@@ -174,7 +174,8 @@ namespace UserInterface
         private const double outpSubstractor = 32768;
         private int[] sampleSize = { 12, 10, 5, 1 };
         private int iterationCount = 500;
-        private double learningRate = 0.00001;
+        private double learningRateplus = 1.2;
+        private double learningRateminus = 0.5;
         private string networkFileName = ""; // network for training
         private bool furtherTraining = false; // indicates if some network was selected for further training
         private double error = 0;
@@ -318,7 +319,7 @@ namespace UserInterface
             SampleSizeTextBox.Text = sampleSize[0].ToString() + ", " + sampleSize[1].ToString() + ", " + sampleSize[2].ToString() + ", " + sampleSize[3].ToString();
             AlphaTextBox.Text = alpha.ToString();
             IterationsTextBox.Text = iterationCount.ToString();
-            LearningRateTextBox.Text = learningRate.ToString();
+            LearningRateTextBox.Text = learningRateplus.ToString() + "; " + learningRateminus.ToString();
             DelimiterTextBox.Text = delimiter.ToString();
             SaveNetworkTextBox.Text = saveTimer.ToString();
             ShuffleTextBox.Text = shuffleTimer.ToString();
@@ -622,14 +623,35 @@ namespace UserInterface
         private void LearningRateTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             // checking value in textbox            
-            double lr;
-            if (!double.TryParse(LearningRateTextBox.Text, out lr))
+            double lr1, lr2;
+
+            string[] lrd = LearningRateTextBox.Text.Split(';');
+
+            bool badParse = (!double.TryParse(lrd[0].Trim(), out lr1)) | (!double.TryParse(lrd[1].Trim(), out lr2));
+
+            if (badParse)
             {
                 MessageBox.Show("Only 'double' values allowed!");
-                LearningRateTextBox.Text = learningRate.ToString();
+                LearningRateTextBox.Text = learningRateplus.ToString() + "; " + learningRateminus.ToString();
                 return;
             }
-            learningRate = lr;
+
+            if (lr1 <= 1)
+            {
+                MessageBox.Show("eta+ must be higher than 1!");
+                LearningRateTextBox.Text = learningRateplus.ToString() + "; " + learningRateminus.ToString();
+                return;
+            }
+            else if ((lr2 <= 0) || (lr2 >= 1))
+            {
+                MessageBox.Show("eta- must be in (0, 1)");
+                LearningRateTextBox.Text = learningRateplus.ToString() + "; " + learningRateminus.ToString();
+                return;
+            }
+
+
+            learningRateplus = lr1;
+            learningRateminus = lr2;
         }
 
         private void LearningRateTextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -703,7 +725,8 @@ namespace UserInterface
             sampleSize[2] = 0;
             sampleSize[3] = 1;
             iterationCount = 500;
-            learningRate = 0.00001;
+            learningRateplus = 1.2;
+            learningRateminus = 0.5;
             delimiter = 8.0;
             saveTimer = 100;
             shuffleTimer = 20;
@@ -715,7 +738,7 @@ namespace UserInterface
             SampleSizeTextBox.Text = sampleSize[0].ToString() + ", " + sampleSize[1].ToString() + ", " + sampleSize[2].ToString() + ", " + sampleSize[3].ToString();
             AlphaTextBox.Text = alpha.ToString();
             IterationsTextBox.Text = iterationCount.ToString();
-            LearningRateTextBox.Text = learningRate.ToString();
+            LearningRateTextBox.Text = learningRateplus.ToString() + "; " + learningRateminus.ToString();
             DelimiterTextBox.Text = delimiter.ToString();
             SampleSizeTextBox.IsEnabled = true;
         }
@@ -1064,6 +1087,9 @@ namespace UserInterface
                 }
 
                 ParallelResilientBackpropagationLearning teacher = new ParallelResilientBackpropagationLearning((ActivationNetwork)network); // teaching algorithm from Accord lib
+                teacher.IncreaseFactor = learningRateplus;
+                teacher.DecreaseFactor = learningRateminus;
+
                 int testC = 0; // number of learning epoches
 
                 while (testC != iterationCount)
@@ -1102,7 +1128,7 @@ namespace UserInterface
                             // save network parameters
                             string path = TransformFilePath.GetParentDirectoryPath() + "\\Audio" + "\\Networks" + "\\PRprop Sample size " + sampleSize[0].ToString()
                                 + "," + sampleSize[1].ToString() + "," + sampleSize[2].ToString() + "," + sampleSize[3].ToString() + "  Alpha " + alpha.ToString() +
-                                "  It " + testC.ToString() + " Del " + delimiter.ToString() + " LR " + learningRate.ToString() + "  Noise " + Fraction.ToString() + "  Error " + error.ToString() + ".bin";
+                                "  It " + testC.ToString() + " Del " + delimiter.ToString() + " LR+ " + learningRateplus.ToString() + " LR- " + learningRateminus.ToString() + "  Noise " + Fraction.ToString() + "  Error " + error.ToString() + ".bin";
 
                             if (furtherTraining)
                             {
