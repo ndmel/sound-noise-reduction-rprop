@@ -1,0 +1,21 @@
+﻿<Window x:Class="UserInterface.NoiseChoosingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface"
+        mc:Ignorable="d"
+        Title="Choose a Noise" WindowStyle="ThreeDBorderWindow" BorderThickness="1" ResizeMode="NoResize" Height="287" Width="300">
+    <Grid>
+        <Button x:Name="SelectNoiseButton" Content="Select noise" HorizontalAlignment="Left" Margin="88,57,0,0" VerticalAlignment="Top" Width="118" Click="OpenNoiseAudio_button_Click" Height="37" BorderThickness="1" BorderBrush="Blue" Foreground="Blue" Background="White"/>
+        <Button x:Name="DoneButton" Content="Done" HorizontalAlignment="Left" Margin="193,10,0,0" VerticalAlignment="Top" Width="70" Click="Done_button_Click" Height="27" BorderThickness="1" BorderBrush="Blue" Foreground="Blue" RenderTransformOrigin="0.854,-0.045" ToolTip="Select noise to proceed" Background="White"/>
+        <Button x:Name="ConvertAudioButton" ToolTip="Convert audio sample" Content="Convert audio" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="105" Click="ConvertAudio_button_Click" Height="37" BorderThickness="1" BorderBrush="Blue" Foreground="Blue" Background="White"/>
+
+        <TextBox x:Name="desiredHzTextBox" HorizontalAlignment="Left" BorderBrush="Blue" Height="23" Margin="146,159,0,0" TextWrapping="Wrap" LostKeyboardFocus="desiredHzTextBox_LostKeyboardFocus" KeyDown="desiredHzTextBox_KeyDown" VerticalAlignment="Top" Width="84"/>
+
+        <Label x:Name="ChosenFileLabel" Content="File: " Foreground="Blue" BorderBrush="Blue" BorderThickness="0"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" MaxWidth="200" Width="178"/>
+        <Label x:Name="label1" Content="to" Foreground="Blue" HorizontalAlignment="Left" Margin="120,159,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="khz" Foreground="Blue" HorizontalAlignment="Left" Margin="235,159,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label x:Name="label" Foreground="Blue" Content="       also you can" HorizontalAlignment="Center" Margin="88,113,86,0" VerticalAlignment="Top" Height="24" Width="118"/>
+    </Grid>
+</Window>

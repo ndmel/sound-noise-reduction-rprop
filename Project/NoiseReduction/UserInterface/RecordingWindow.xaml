@@ -1,0 +1,36 @@
+﻿<Window x:Class="UserInterface.RecordingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface"
+        mc:Ignorable="d"
+        Title="Record or Select Audio" WindowStyle="ThreeDBorderWindow" BorderThickness="1" ResizeMode="NoResize" Height="287" Width="300">
+
+    <Grid Background="White" Margin="0">
+        <Button x:Name="SelectAudioButton" Content="Select audio" Margin="10,42,185,175" Click="OpenAudio_button_Click" BorderThickness="1" Background="White" BorderBrush="Blue" Foreground="Blue" ToolTip="You can record your own audio"/>
+        <Button x:Name="StartRecodingButton" Content="Start recording" Margin="10,112,185,105" Click="Record_button_Click" BorderThickness="1" Background="White" BorderBrush="Blue" Foreground="Blue" ToolTip="Record audio using device primary microphone"/>
+        <Button x:Name="DoneButton" Content="Done" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Top" Width="71" Click="Done_button_Click" Height="27" BorderThickness="1" Background="White" BorderBrush="Blue" Foreground="Blue" ToolTip="Select audio to proceed" Grid.ColumnSpan="2"/>
+
+        <Polygon  Stretch="Fill" Stroke="Purple" StrokeThickness="1" Fill="White" VerticalAlignment="Bottom" Height="90" Margin="10,0,10,10" >
+            <Polygon.Points>
+                <Point X="0.0"
+                   Y="0.0" />
+                <Point X="272"
+                   Y="0.0" />
+                <Point X="272"
+                   Y="90" />
+                <Point X="0.0"
+                   Y="90" />
+            </Polygon.Points>
+        </Polygon>
+        <Polygon x:Name="waveForm"   Stroke="Purple" StrokeThickness="1" Fill="#FFFFFDFD" VerticalAlignment="Bottom" Panel.ZIndex="1" Width="272" Height="90" Margin="10,0,10,10"/>
+
+        <TextBox x:Name="ChosenFileLabel" IsReadOnly="True" Text="File: " TextAlignment="Justify" Background="White" Foreground="Blue" BorderBrush="Blue" BorderThickness="0" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" MaxWidth="200" HorizontalAlignment="Left" Width="156"/>
+        <TextBox x:Name="sampleRateTextBox" HorizontalAlignment="Left" BorderBrush="Blue" Height="26" Margin="149,112,0,0" TextWrapping="Wrap" LostKeyboardFocus="sampleRateTextBox_LostKeyboardFocus" KeyDown="sampleRateTextBox_KeyDown" VerticalAlignment="Top" Width="84"/>
+        
+        <Label x:Name="label" Foreground="Blue" Content="             or" HorizontalAlignment="Center" Margin="10,81,185,0" VerticalAlignment="Top" Height="24" Width="97"/>
+        <Label x:Name="label1" Content="with" Foreground="Blue" HorizontalAlignment="Left" Margin="112,112,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="khz" Foreground="Blue" HorizontalAlignment="Left" Margin="238,112,0,0" VerticalAlignment="Top" Height="23"/>
+    </Grid>
+</Window>
