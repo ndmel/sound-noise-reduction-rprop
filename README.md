@@ -7,7 +7,7 @@ App allows you to record or upload audio, make it 'noisy' and train neural nets 
 
 # Neural euristics
 
-I used neural net with 250, 180, 50, 1 nodes, sigmoid function with alpha = 0,25  and got normal results even on test data (test.wav that can be found in NoiseReduction/Audio/Speech).
+I used neural net with 250, 180, 50, 1 nodes, sigmoid function with alpha = 0,25.
 
 Learining rate eta+ was fixed at 1.2 and eta- at 0.5.
 
