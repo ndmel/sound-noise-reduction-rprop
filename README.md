@@ -11,7 +11,7 @@ I used neural net with 250, 180, 50, 1 nodes, sigmoid function with alpha = 0,25
 
 Learining rate eta+ was fixed at 1.2 and eta- at 0.5.
 
-I shuffled noise every 100 iterations of training.
+I shuffled noise every 100 iterations of training with total number of iterations of 500.
 
 # Used noise
 
