@@ -28,3 +28,7 @@ Top left corner allows you to record or upload your 'speech' (Select Speech), up
 Lower you will find section to train your neural net. There are various options that can be set. Or you can upload some of your previous network for further training.
 
 Right part of the app is to test your nets. Upload 'speech' and 'noisy speech', press the button and select neural net to reduce the noise.
+
+# Demos
+
+Go to github folder demos. There you can find initial sounds, sounds with noise and recovered sounds. Files "Word Яблоко Чист", "Яблоко шум" and "Яблоко очищ" are those on which neural net was trained, and "Word Груша Чист", "Груша шум" and "Груша очищ" are test sounds.
