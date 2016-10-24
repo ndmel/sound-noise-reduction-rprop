@@ -19,7 +19,7 @@ Noise can be found in NoiseReduction/Audio/Noise and it was taken from SPIB data
 
 # How to use
 
-Run the .sln in NoiseReduction folder.
+Run the .sln in NoiseReduction folder (use Microsoft Visual Studio).
 
 Interface can be split into three parts. 
 
