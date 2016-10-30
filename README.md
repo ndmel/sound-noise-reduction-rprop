@@ -17,6 +17,12 @@ I shuffled noise every 100 iterations of training with total number of iteration
 
 Noise can be found in NoiseReduction/Audio/Noise and it was taken from SPIB database http://spib.linse.ufsc.br/noise.html
 
+# Valid neuro nets
+
+Some of the neuro nets in project are damaged. If you want to test out 'best' neuro net you can find it in 'demos' folder. There are 5 nets, based on iterations number.
+
+To test it out: open project in Visual Studio, then use right part of the interface to upload 'clean speech', 'noisy speech', press button below, find your neural net in 'demos' folder, save 'recovered speech'.
+
 # How to use
 
 Run the .sln in NoiseReduction folder (use Microsoft Visual Studio).
